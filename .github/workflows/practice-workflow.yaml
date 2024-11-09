@@ -1,0 +1,11 @@
+name: practice-workflow
+on: [push], [pull_request]
+
+jobs:
+  check-python-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check python
+        run: python --version
+      - name: check pip
+        run: pip --version
