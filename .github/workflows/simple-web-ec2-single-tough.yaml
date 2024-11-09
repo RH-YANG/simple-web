@@ -16,12 +16,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-regieon: ap-northeast-2
-        - name: SSH키 설정
-          uses: webfactory/ssh-agent@v0.5.3
-          with: 
-            ssh-private-key: ${{ secret.AWS_KEY }}
-        - name: 파일 목록보기
-          run: |
-            ssh -o StrictHostKeyChecking=no \
-            ${{ secret.AWS_USER }}@${{ secret.AWS_HOST }} \
-            "ls -al /home/${{ secrets.AWS_USER }}"
+      - name: SSH키 설정
+        uses: webfactory/ssh-agent@v0.5.3
+        with: 
+          ssh-private-key: ${{ secret.AWS_KEY }}
+      - name: 파일 목록보기
+        run: |
+          ssh -o StrictHostKeyChecking=no \
+          ${{ secret.AWS_USER }}@${{ secret.AWS_HOST }} \
+          "ls -al /home/${{ secrets.AWS_USER }}"
