@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-northeast-2" # 사용할 AWS 리전
+  region = "ap-northeast-2" # 사용할 AWS 리전 
 }
 
 # 보안 그룹 설정: SSH(22) 및 HTTP(80) 트래픽 허용
